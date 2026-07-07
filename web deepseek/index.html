@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Meta descripción para SEO -->
+    <meta name="description" content="Sin Botones Rocanrol – Banda de rock nacional. Escuchá nuestra música, conocé los shows y seguinos en redes." />
+    <title>Sin Botones Rocanrol</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="site.webmanifest">
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome (íconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- ============ HEADER ============ -->
+    <header>
+        <h1>SIN BOTONES</h1>
+        <!-- Menú de navegación (se puede convertir en hamburguesa en móvil) -->
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#banda">La Banda</a>
+            <a href="#galeria">Galería</a>
+            <a href="#discos">Discos</a>
+            <a href="#shows">Shows</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio">
+    <!-- Canvas para partículas (opcional, puedes conservarlo) -->
+    <canvas id="fondo-particulas"></canvas>
+
+    <div class="hero-contenido">
+        <!-- Logo sin fondo -->
+        <img src="logo-sin-fondo.png" alt="Sin Botones" class="logo-hero" />
+        
+        <!-- Reproductor -->
+        <div class="reproductor-hero">
+            <p class="ultimo-lanzamiento">Último lanzamiento</p>
+            <audio controls>
+                <source src="cancion.mp3" type="audio/mpeg">
+                Tu navegador no soporta audio.
+            </audio>
+        </div>
+
+        <a href="#banda" class="boton-hero">Explorar</a>
+    </div>
+</section>
+
+    <!-- ============ LA BANDA ============ -->
+    <section class="contenido" id="banda">
+        <h2>LA BANDA</h2>
+        <p>
+            Sin Botones es una banda de rock de Zona Sur, Buenos Aires, formada por amigos unidos por la pasión por el rock nacional. Nuestro estilo está inspirado en el rock barrial argentino, con un sonido potente y la misma energía que llevamos a cada ensayo y a cada escenario.
+        </p>
+        <p>
+            <strong>Integrantes:</strong><br />
+            • <em>Nicolas Frangipane</em> – Voz y guitarra<br />
+            • <em>Juan Ariel Caceres</em> – Guitarra<br />
+            • <em>Ale Nocentini</em> – Bajo<br />
+            • <em>Ariel Velazquez</em> – Bateria<br />
+            • <em>Christian Ciucci</em> – Trompeta<br />
+            • <em>Nicolas Martini</em> – Saxo alto<br />
+            • <em>Ezequiel Sandez</em> – Saxo tenor<br />
+            • <em>Fabian La Porta</em> – Teclados<br />
+    </section>
+
+    <!-- ============ GALERÍA ============ -->
+    <section class="galeria" id="galeria">
+    <h2>GALERÍA</h2>
+
+    <div class="carrusel-wrapper">
+        <button class="carrusel-btn izquierda" onclick="moverCarrusel(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="carrusel-container" id="carrusel">
+            <img src="sb1.png" alt="Foto 1" data-lightbox />
+            <img src="sb2.png" alt="Foto 2" data-lightbox />
+            <img src="sb3.png" alt="Foto 3" data-lightbox />
+            <img src="sb4.png" alt="Foto 4" data-lightbox />
+            <!-- Agregá más si querés -->
+        </div>
+
+        <button class="carrusel-btn derecha" onclick="moverCarrusel(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Lightbox (modal) -->
+    <div id="lightbox" class="lightbox">
+        <span class="cerrar" id="cerrar-lightbox">&times;</span>
+        <img class="lightbox-contenido" id="img-lightbox" />
+    </div>
+</section>
+
+<!-- ============ DISCOS ============ -->
+<section class="discos" id="discos">
+    <h2>DISCOGRAFÍA</h2>
+    <div class="discos-grid">
+
+        <!-- Disco 1 -->
+        <div class="disco-card">
+            <img src="tapa sinbotones.jpg" alt="Portada del disco 'Sin Botones'" />
+            <h3>Sin Botones</h3>
+            <p class="año">2013</p>
+            <button class="btn-canciones" onclick="toggleCanciones(this)">Ver canciones</button>
+            <ul class="lista-canciones">
+                <li>1. Tren de la Muerte</li>
+                <li>2. Sueño es Verdad</li>
+                <li>3. Quiero Más</li>
+                <li>4. Ángel Lucifer</li>
+                <li>5. Sin Botones</li>
+                <li>6. Superhéroe</li>
+                <li>7. Bailando</li>
+                <li>8. A Cereza</li>
+                <li>9. Ir Más Allá</li>
+                <li>10. Pibe</li>
+            </ul>
+        </div>
+
+        <!-- Disco 2 -->
+        <div class="disco-card">
+            <img src="tapa circo.jpg" alt="Portada del disco 'Circo de mentiras'" />
+            <h3>Circo de Mentiras</h3>
+            <p class="año">2017</p>
+            <button class="btn-canciones" onclick="toggleCanciones(this)">Ver canciones</button>
+            <ul class="lista-canciones">
+                <li>1. Fantasmas del Infierno</li> 
+                <li>2. Circo de Mentiras</li> 
+                <li>3. Fin del Mundo</li> 
+                <li>4. Baigorria</li> 
+                <li>5. Rock de la Noche</li> 
+                <li>6. Deja vú</li> 
+                <li>7. Felonia</li> 
+                <li>8. Entre las notas</li> 
+                <li>9. Inexplicable</li> 
+                <li>10. Idolatras de un Dios sin Gracia</li>
+            </ul>
+        </div>
+
+        <!-- Disco 3 -->
+        <div class="disco-card">
+            <img src="tapa sencillo.jpg" alt="Portada del disco 'Sencillos'" />
+            <h3>Sencillos</h3>
+            <p class="año">2021-2025</p>
+            <button class="btn-canciones" onclick="toggleCanciones(this)">Ver canciones</button>
+            <ul class="lista-canciones">
+                <li>1. Poco Perfume</li>
+                <li>2. Zarandaja</li>
+                <li>3. Sarcasmo</li>
+                <li>4. Brindo por el Rock and roll</li>
+                <li>5. La razón por la que sigo acá</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+    <!-- ============ SHOWS ============ -->
+   <section class="shows" id="shows">
+    <h2>PRÓXIMOS SHOWS</h2>
+    <div class="shows-grid">
+
+        <!-- Show 1 -->
+        <div class="show-card">
+            <div class="show-fecha">
+                <span class="dia">10</span>
+                <span class="mes">OKT</span>
+            </div>
+            <div class="show-info">
+                <h3>El Teatro Greison</h3>
+                <p class="ubicacion"><i class="fas fa-map-pin"></i> Dardo Rocha 135, Monte Grande</p>
+                <p class="hora"><i class="fas fa-clock"></i> 21:00 hs</p>
+                <a href="https://www.google.com/maps/place/teatro+greison/data=!4m2!3m1!1s0x95bcd16baca52b31:0x7375ebccd7974993?sa=X&ved=1t:242&ictx=111" target="_blank" class="map-link">
+                    <i class="fas fa-directions"></i> Cómo llegar
+                </a>
+            </div>
+            <div class="show-accion">
+                <a href="https://entradas.mianticipada.com/es/entradas/evento/sin-botones-en-monte-grande-q64d" class="btn-entradas">Comprar entradas</a>
+            </div>
+        </div>
+
+        <!-- Show 2 -->
+        <div class="show-card">
+            <div class="show-fecha">
+                <span class="dia">01</span>
+                <span class="mes">AGO</span>
+            </div>
+            <div class="show-info">
+                <h3>El Padilla</h3>
+                <p class="ubicacion"><i class="fas fa-map-pin"></i> Av. Meeks 1058, Temperley</p>
+                <p class="hora"><i class="fas fa-clock"></i> 21:00 hs</p>
+                <a href="https://www.google.com/maps/place/El+Padilla+-+Espacio+Cultural/@-34.7738783,-58.39885,592m/data=!3m1!1e3!4m14!1m7!3m6!1s0x95bcd2e6310c376f:0xede2c041323da99b!2sEl+Padilla+-+Espacio+Cultural!8m2!3d-34.7739868!4d-58.3975453!16s%2Fg%2F11c2l0mntm!3m5!1s0x95bcd2e6310c376f:0xede2c041323da99b!8m2!3d-34.7739868!4d-58.3975453!16s%2Fg%2F11c2l0mntm?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-link">
+                    <i class="fas fa-directions"></i> Cómo llegar
+                </a>
+            </div>
+            <div class="show-accion">
+                <a href="https://ig.me/m/sinbotonesoficial" class="btn-entradas">Comprar entradas</a>
+            </div>
+        </div>
+
+        <!-- Show 3 -->
+        <div class="show-card">
+            <div class="show-fecha">
+                <span class="dia">11</span>
+                <span class="mes">JUL</span>
+            </div>
+            <div class="show-info">
+                <h3>Cerntro Cultural Metamorfosis</h3>
+                <p class="ubicacion"><i class="fas fa-map-pin"></i> Gral Rodriguez 321, Monte Grande</p>
+                <p class="hora"><i class="fas fa-clock"></i> 22:00 hs</p>
+                <a href="https://www.google.com/maps/place/Centro+Cultural+Metamorfosis/@-34.8156039,-58.4721648,811m/data=!3m2!1e3!4b1!4m6!3m5!1s0x95bcd164728e1819:0xf0111aa2a2540cf5!8m2!3d-34.8156039!4d-58.4695845!16s%2Fg%2F1tg9twp7?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="map-link">
+                    <i class="fas fa-directions"></i> Cómo llegar
+                </a>
+            </div>
+            <div class="show-accion">
+                <a href="https://ig.me/m/sinbotonesoficial" class="btn-entradas">Comprar entradas</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="contacto" id="contacto">
+        <h2>CONTACTO</h2>
+
+        <!-- Redes sociales -->
+        <div class="redes">
+            <a href="https://www.instagram.com/sinbotonesoficial" target="_blank" class="social">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://open.spotify.com/intl-es/artist/1IHdqBl2HElvZNSRmiGMny" target="_blank" class="social">
+                <i class="fab fa-spotify"></i> Spotify
+            </a>
+            <a href="https://www.youtube.com/@sinbotonestv7410" target="_blank" class="social">
+                <i class="fab fa-youtube"></i> YouTube
+            </a>
+            <a href="https://www.tiktok.com/@sinbotonestv?_r=1&_t=ZS-97pABpOdie8" target="_blank" class="social">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+        </div>
+
+        <!-- Formulario de contacto -->
+        <form class="form-contacto" action="#" method="post">
+            <h3>Escribinos</h3>
+            <input type="text" name="nombre" placeholder="Tu nombre" required />
+            <input type="email" name="email" placeholder="Tu correo" required />
+            <textarea name="mensaje" rows="4" placeholder="Tu mensaje..." required></textarea>
+            <button type="submit" class="boton">Enviar</button>
+        </form>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <p>&copy; 2026 Sin Botones Rocanrol</p>
+    </footer>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script>
+        // ===== LIGHTBOX =====
+const lightbox = document.getElementById('lightbox');
+const imgLightbox = document.getElementById('img-lightbox');
+const cerrarBtn = document.getElementById('cerrar-lightbox');
+
+// Función para abrir lightbox
+function abrirLightbox(src) {
+    imgLightbox.src = src;
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // evitar scroll de fondo
+}
+
+// Función para cerrar lightbox
+function cerrarLightbox() {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+// Evento clic en el botón cerrar
+cerrarBtn.addEventListener('click', cerrarLightbox);
+
+// Cerrar al hacer clic fuera de la imagen (en el fondo)
+lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+        cerrarLightbox();
+    }
+});
+
+// Cerrar con tecla ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') cerrarLightbox();
+});
+
+// ===== ASIGNAR EVENTOS A LAS IMÁGENES =====
+document.addEventListener('DOMContentLoaded', function() {
+    const imagenes = document.querySelectorAll('#carrusel img[data-lightbox]');
+    imagenes.forEach(function(img) {
+        img.addEventListener('click', function(e) {
+            e.stopPropagation(); // evita que el clic se propague al carrusel
+            abrirLightbox(this.src);
+        });
+    });
+});
+
+// Mostrar/ocultar lista de canciones en cada disco
+function toggleCanciones(btn) {
+    var lista = btn.nextElementSibling; // ul
+    if (lista.style.display === 'block') {
+        lista.style.display = 'none';
+        btn.textContent = 'Ver canciones';
+    } else {
+        lista.style.display = 'block';
+        btn.textContent = 'Ocultar canciones';
+    }
+}
+
+// Inicializar todas las listas ocultas al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    var listas = document.querySelectorAll('.lista-canciones');
+    listas.forEach(function(lista) {
+        lista.style.display = 'none';
+    });
+});
+
+// ===== CARRUSEL (desplazamiento) =====
+function moverCarrusel(direccion) {
+    const contenedor = document.getElementById('carrusel');
+    const primeraImg = contenedor.querySelector('img');
+    if (!primeraImg) return;
+    const ancho = primeraImg.offsetWidth + 20; // imagen + gap
+    contenedor.scrollBy({ left: ancho * direccion, behavior: 'smooth' });
+}
+
+// ===== PARTÍCULAS (canvas) =====
+(function() {
+    const canvas = document.getElementById('fondo-particulas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    let ancho = canvas.width = window.innerWidth;
+    let alto = canvas.height = window.innerHeight;
+
+    const particulas = [];
+    const cantidad = 80;
+
+    for (let i = 0; i < cantidad; i++) {
+        particulas.push({
+            x: Math.random() * ancho,
+            y: Math.random() * alto,
+            radio: Math.random() * 3 + 1,
+            velocidadX: (Math.random() - 0.5) * 1.5,
+            velocidadY: (Math.random() - 0.5) * 1.5,
+        });
+    }
+
+    function dibujar() {
+        ctx.clearRect(0, 0, ancho, alto);
+
+        particulas.forEach(p => {
+            // mover
+            p.x += p.velocidadX;
+            p.y += p.velocidadY;
+
+            // rebotar en bordes
+            if (p.x < 0 || p.x > ancho) p.velocidadX *= -1;
+            if (p.y < 0 || p.y > alto) p.velocidadY *= -1;
+
+            // dibujar
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radio, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+            ctx.shadowColor = '#d60000';
+            ctx.shadowBlur = 10;
+            ctx.fill();
+        });
+
+        // líneas entre partículas cercanas
+        for (let i = 0; i < particulas.length; i++) {
+            for (let j = i + 1; j < particulas.length; j++) {
+                const dx = particulas[i].x - particulas[j].x;
+                const dy = particulas[i].y - particulas[j].y;
+                const distancia = Math.sqrt(dx*dx + dy*dy);
+                if (distancia < 120) {
+                    ctx.beginPath();
+                    ctx.moveTo(particulas[i].x, particulas[i].y);
+                    ctx.lineTo(particulas[j].x, particulas[j].y);
+                    ctx.strokeStyle = `rgba(214, 0, 0, ${0.2 * (1 - distancia/120)})`;
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                }
+            }
+        }
+
+        requestAnimationFrame(dibujar);
+    }
+
+    dibujar();
+
+    window.addEventListener('resize', () => {
+        ancho = canvas.width = window.innerWidth;
+        alto = canvas.height = window.innerHeight;
+    });
+})();
+    </script>
+
+</body>
+</html>
