@@ -1,0 +1,1121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0d0d0d;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ============ HEADER ============ */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+header h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 45px;
+    letter-spacing: 3px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #d60000;
+}
+
+/* ============ HERO ============ */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.hero img {
+    width: 80%;
+    max-width: 950px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 35px rgba(255, 255, 255, 0.08);
+    transition: 0.5s;
+}
+
+.hero img:hover {
+    transform: scale(1.02);
+}
+
+.hero h2 {
+    margin-top: 40px;
+    font-size: 70px;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 5px;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #bfbfbf;
+}
+
+.boton {
+    margin-top: 40px;
+    padding: 15px 45px;
+    background: #d60000;
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background: white;
+    color: black;
+}
+
+/* ============ CONTENIDO (La Banda) ============ */
+.contenido {
+    max-width: 1000px;
+    margin: auto;
+    padding: 100px 30px;
+    text-align: center;
+}
+
+.contenido h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+
+.contenido p {
+    font-size: 18px;
+    line-height: 35px;
+    color: #d8d8d8;
+    margin-bottom: 20px;
+}
+
+/* ============ GALERÍA ============ */
+.galeria {
+    padding: 100px 30px;
+    text-align: center;
+}
+
+.galeria h2 {
+    font-size: 60px;
+    font-family: 'Bebas Neue', cursive;
+    margin-bottom: 50px;
+}
+
+.imagenes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.imagenes img {
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.imagenes img:hover {
+    transform: scale(1.05);
+}
+
+/* ============ LIGHTBOX ============ */
+.lightbox {
+    display: none; /* oculto por defecto */
+    position: fixed;
+    z-index: 9999; /* muy alto para que esté por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lightbox-contenido {
+    max-height: 90%;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(214, 0, 0, 0.5);
+}
+
+.cerrar {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10000;
+}
+
+.cerrar:hover {
+    color: #d60000;
+}
+/* ============ SHOWS ============ */
+.shows {
+    padding: 100px 30px;
+    text-align: center;
+}
+
+.shows h2 {
+    font-size: 60px;
+    font-family: 'Bebas Neue', cursive;
+    margin-bottom: 50px;
+}
+
+.shows-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.show-card {
+    background: #181818;
+    border-radius: 20px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    border-left: 6px solid #d60000;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    flex-wrap: wrap;
+}
+
+.show-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(214, 0, 0, 0.2);
+}
+
+/* Fecha */
+.show-fecha {
+    background: #d60000;
+    border-radius: 15px;
+    padding: 12px 20px;
+    text-align: center;
+    min-width: 70px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.show-fecha .dia {
+    font-size: 32px;
+    font-weight: 700;
+    display: block;
+    line-height: 1;
+}
+
+.show-fecha .mes {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Información del show */
+.show-info {
+    flex: 1;
+    text-align: left;
+    min-width: 180px;
+}
+
+.show-info h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin: 0 0 8px 0;
+}
+
+.show-info .ubicacion,
+.show-info .hora {
+    font-size: 15px;
+    color: #ccc;
+    margin: 4px 0;
+}
+
+.show-info .ubicacion i,
+.show-info .hora i {
+    color: #d60000;
+    width: 20px;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #d60000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.map-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Botón de entradas */
+.show-accion {
+    margin-left: auto;
+}
+
+.btn-entradas {
+    display: inline-block;
+    padding: 10px 25px;
+    background: transparent;
+    border: 2px solid #d60000;
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.btn-entradas:hover {
+    background: #d60000;
+    color: white;
+    box-shadow: 0 0 20px rgba(214, 0, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .show-card {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        padding: 25px 20px;
+    }
+
+    .show-info {
+        text-align: center;
+    }
+
+    .show-accion {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .show-fecha {
+        align-self: center;
+    }
+}
+
+/* ============ CONTACTO ============ */
+.contacto {
+    padding: 100px 30px;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 60px;
+    font-family: 'Bebas Neue', cursive;
+    margin-bottom: 30px;
+}
+
+/* Redes sociales (ahora fuera del media query) */
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.social {
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+.social:hover {
+    color: #d60000;
+}
+
+/* Formulario de contacto */
+.form-contacto {
+    max-width: 500px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-contacto h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    background: #222;
+    color: white;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+    background: #333;
+    box-shadow: 0 0 10px rgba(214, 0, 0, 0.3);
+}
+
+.form-contacto textarea {
+    resize: vertical;
+    border-radius: 20px;
+}
+
+.form-contacto .boton {
+    margin-top: 0;
+    width: fit-content;
+    align-self: center;
+}
+
+/* ============ FOOTER ============ */
+footer {
+    padding: 30px;
+    text-align: center;
+    background: black;
+    color: #777;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    nav {
+        margin-top: 15px;
+    }
+
+    nav a {
+        margin: 5px 10px;
+        display: inline-block;
+        font-size: 14px;
+    }
+
+    .hero h2 {
+        font-size: 50px;
+    }
+
+    .hero img {
+        width: 95%;
+    }
+
+    /* Redes en columna en móvil */
+    .redes {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-contacto {
+        padding: 0 15px;
+    }
+
+    .lightbox-contenido {
+        margin-top: 20%;
+        max-width: 95%;
+    }
+
+    .cerrar {
+        top: 20px;
+        right: 30px;
+        font-size: 35px;
+    }
+}
+
+/* ============ DISCOGRAFÍA ============ */
+.discos {
+    padding: 100px 30px;
+    text-align: center;
+    background: #0d0d0d;
+}
+
+.discos h2 {
+    font-size: 60px;
+    font-family: 'Bebas Neue', cursive;
+    margin-bottom: 50px;
+}
+
+.discos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.disco-card {
+    background: #181818;
+    border-radius: 20px;
+    padding: 20px 20px 25px;
+    transition: 0.3s;
+    border: 1px solid #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.disco-card:hover {
+    transform: translateY(-10px);
+    border-color: #d60000;
+    box-shadow: 0 10px 30px rgba(214, 0, 0, 0.2);
+}
+
+.disco-card img {
+    width: 100%;
+    max-width: 200px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.disco-card h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.disco-card .año {
+    color: #d60000;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.btn-canciones {
+    background: transparent;
+    border: 2px solid #d60000;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+
+.btn-canciones:hover {
+    background: #d60000;
+    color: white;
+}
+
+.lista-canciones {
+    list-style: none;
+    width: 100%;
+    text-align: left;
+    padding: 10px 0 0;
+    margin: 0;
+    display: none; /* oculto por defecto */
+}
+
+.lista-canciones li {
+    padding: 5px 0;
+    border-bottom: 1px solid #2a2a2a;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.lista-canciones li:last-child {
+    border-bottom: none;
+}
+
+/* Ajuste responsive para móviles */
+@media (max-width: 768px) {
+    .discos-grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+    }
+    .disco-card img {
+        max-width: 150px;
+    }
+}
+
+/* ===== NUEVO HERO ===== */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    background: #0d0d0d;
+}
+
+.hero-contenedor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 90%;
+    gap: 40px;
+}
+
+/* Columna izquierda */
+.hero-izquierda {
+    flex: 1.2;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero-izquierda h2 {
+    font-size: 70px;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+.hero-izquierda .frase {
+    font-size: 22px;
+    color: #bfbfbf;
+    margin: 0;
+}
+
+/* Reproductor */
+.reproductor {
+    background: #181818;
+    padding: 20px 25px;
+    border-radius: 16px;
+    border-left: 5px solid #d60000;
+    width: 100%;
+    max-width: 400px;
+}
+
+.reproductor .ultimo-lanzamiento {
+    font-size: 16px;
+    font-weight: 600;
+    color: #d60000;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.reproductor audio {
+    width: 100%;
+    background: #222;
+    border-radius: 30px;
+    outline: none;
+}
+
+/* Columna derecha (imagen) */
+.hero-derecha {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-derecha img {
+    width: 100%;
+    max-width: 450px;  /* reducido */
+    border-radius: 20px;
+    box-shadow: 0px 0px 35px rgba(255, 255, 255, 0.08);
+    transition: 0.5s;
+}
+
+.hero-derecha img:hover {
+    transform: scale(1.02);
+}
+
+/* Botón "Seguinos" (ya existente, pero ajustamos margen) */
+.hero-izquierda .boton {
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero-contenedor {
+        flex-direction: column-reverse; /* imagen arriba, texto abajo */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-izquierda {
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-izquierda h2 {
+        font-size: 50px;
+    }
+
+    .hero-derecha img {
+        max-width: 250px;
+    }
+
+    .reproductor {
+        max-width: 100%;
+    }
+
+    .hero-izquierda .boton {
+        align-self: center;
+    }
+}
+
+/* ===== CARRUSEL GALERÍA ===== */
+.galeria {
+    padding: 100px 30px;
+    text-align: center;
+}
+
+.galeria h2 {
+    font-size: 60px;
+    font-family: 'Bebas Neue', cursive;
+    margin-bottom: 50px;
+}
+
+.carrusel-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.carrusel-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carrusel-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carrusel-container::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 10px;
+}
+
+.carrusel-container::-webkit-scrollbar-thumb {
+    background: #d60000;
+    border-radius: 10px;
+}
+
+.carrusel-container img {
+    flex: 0 0 auto;
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    scroll-snap-align: start;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.carrusel-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(214, 0, 0, 0.4);
+}
+
+/* Botones de navegación */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 24px;
+    z-index: 10;
+    transition: 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.carrusel-btn:hover {
+    background: #d60000;
+}
+
+.carrusel-btn.izquierda {
+    left: 10px;
+}
+
+.carrusel-btn.derecha {
+    right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carrusel-container img {
+        width: 200px;
+        height: 150px;
+    }
+
+    .carrusel-btn {
+        padding: 10px 8px;
+        font-size: 18px;
+    }
+}
+
+/* ===== HERO IMPACTANTE ===== */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background: #0d0d0d;
+}
+
+/* Fondo con gradiente animado */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, #d60000 0%, #0d0d0d 70%);
+    background-size: 200% 200%;
+    animation: moverGradiente 6s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+@keyframes moverGradiente {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Canvas de partículas */
+#fondo-particulas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Contenido del hero (por encima de todo) */
+.hero-contenido {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    animation: aparecer 1.5s ease-out;
+}
+
+@keyframes aparecer {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Título principal con efecto neón */
+.titulo-principal {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 120px;
+    letter-spacing: 10px;
+    color: white;
+    text-shadow: 0 0 10px #d60000, 0 0 20px #d60000, 0 0 40px #d60000, 0 0 80px #d60000;
+    animation: parpadear 2s infinite alternate;
+    margin: 0;
+}
+
+@keyframes parpadear {
+    0% { text-shadow: 0 0 10px #d60000, 0 0 20px #d60000, 0 0 40px #d60000; }
+    100% { text-shadow: 0 0 20px #d60000, 0 0 40px #d60000, 0 0 80px #d60000, 0 0 120px #ff3333; }
+}
+
+/* Subtítulo */
+.subtitulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 8px;
+    margin: 10px 0;
+    text-shadow: 0 0 15px rgba(214, 0, 0, 0.8);
+}
+
+.eslogan {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #bfbfbf;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* Botón con efecto de onda */
+.boton-hero {
+    display: inline-block;
+    padding: 16px 50px;
+    background: transparent;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 50px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.boton-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.boton-hero:hover::before {
+    left: 100%;
+}
+
+.boton-hero:hover {
+    background: #d60000;
+    border-color: #d60000;
+    box-shadow: 0 0 30px rgba(214, 0, 0, 0.6);
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .titulo-principal {
+        font-size: 60px;
+        letter-spacing: 5px;
+    }
+    .subtitulo {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+    .eslogan {
+        font-size: 16px;
+    }
+    .boton-hero {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+}
+
+/* ===== HERO CON FONDO ===== */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background: #0d0d0d;
+}
+
+/* Imagen de fondo */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('fondo-banda.jpg') center/cover no-repeat;
+    opacity: 0.3; /* Ajusta la intensidad */
+    z-index: 0;
+}
+
+/* Overlay rojo/negro (opcional) */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(214,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
+    z-index: 1;
+}
+
+/* Canvas de partículas */
+#fondo-particulas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Contenido principal */
+.hero-contenido {
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    animation: aparecer 1.5s ease-out;
+}
+
+@keyframes aparecer {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Logo (imagen sin fondo) */
+.logo-hero {
+    max-width: 70%;
+    width: 500px;
+    height: auto;
+    animation: latir 2s infinite alternate;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+@keyframes latir {
+    0% { filter: drop-shadow(0 0 20px rgba(214, 0, 0, 0.6)); }
+    100% { filter: drop-shadow(0 0 50px rgba(214, 0, 0, 1)); }
+}
+
+/* Reproductor */
+.reproductor-hero {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 20px 30px;
+    border-radius: 20px;
+    border-left: 5px solid #d60000;
+    width: 100%;
+    max-width: 450px;
+}
+
+.reproductor-hero .ultimo-lanzamiento {
+    font-size: 16px;
+    font-weight: 600;
+    color: #d60000;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+}
+
+.reproductor-hero audio {
+    width: 100%;
+    background: #222;
+    border-radius: 30px;
+    outline: none;
+    height: 40px;
+}
+
+.reproductor-hero audio::-webkit-media-controls-panel {
+    background: #222;
+}
+
+/* Botón */
+.boton-hero {
+    display: inline-block;
+    padding: 16px 50px;
+    background: transparent;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 50px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.boton-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.boton-hero:hover::before {
+    left: 100%;
+}
+
+.boton-hero:hover {
+    background: #d60000;
+    border-color: #d60000;
+    box-shadow: 0 0 30px rgba(214,0,0,0.6);
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo-hero {
+        max-width: 90%;
+        width: 300px;
+    }
+    .reproductor-hero {
+        padding: 15px 20px;
+        max-width: 100%;
+    }
+    .boton-hero {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+}
